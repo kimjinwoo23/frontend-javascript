@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>입출금 계좌</title>
+    </head>
+    <body>
+
+        <style>
+            .account , .account * {
+                margin: 0;
+                padding: 0;
+                
+            }
+            .account{
+                border: 5px solid gray;
+                border-radius: 20px;
+                padding: 10px 50px;
+                width: 500px;
+                margin: 100px auto;
+                background-color: red;
+            }
+            .row{
+                display:flex;
+                margin: 20px;
+                padding: 20px;
+
+            }
+            .입금버튼만들기{
+                background-color: aquamarine;
+                color: gold;
+                box-shadow: 10px;
+                
+            }
+            button{
+                border-radius: 10px;
+                width: 500px;
+                font-weight: 1000;
+                font-size: 100px;
+
+            }
+            .출금버튼만들기{
+                background-color: antiquewhite;
+                color: cornflowerblue;
+                box-shadow: 100px;
+            }
+        </style>
+
+        <h1>입출금하기</h1>
+        <hr>
+        <div class="account">
+            <div class="row">
+                <h1>잔액 :  <span id = "output"> 0</span>원</h1>
+            </div class = "row ">
+                <label>금액 : </label>
+                <input type="text" id="amount">
+                <span>원</span>
+            <div class="row">
+                <button class="입금버튼만들기" onclick="입금버튼()">입금하기</button>
+                <button class="출금버튼만들기" onclick="출금버튼()">출금하기</button>
+            </div>
+           <script>
+            let 잔액 = 0;
+
+            function 입금버튼(){
+
+
+                const 입금액 = parseInt(document.getElementById("amount").value)
+                //만약에 숫자이외의 값을 넣을경우 nan으로 표기되면서 값을 
+                //계산하지못함
+                if(isNaN(입금액) || 얼마<0){
+                   
+                    alert("올바른 금액을 입력하세요")
+                }else{
+
+                    잔액 += 입금액;
+                document.getElementById("output").innerText = 잔액;
+                }
+
+                //숫자가 아니라 문자로 인식할때는 ->숫자로 변경 
+
+              
+                
+            }
+            function 출금버튼(){
+                const 출금액 = parseInt(document.getElementById("amount").value)
+                if(isNaN(출금액) || 얼마<0){
+                   
+                   alert("올바른 금액을 입력하세요")
+               }else{
+
+                   잔액 -= 입금액;
+               document.getElementById("output").innerText = 잔액;
+               }
+               
+
+            }
+
+           </script>
+        </div>
+
+
+
+
+
+    </body>
+
+
+</html>

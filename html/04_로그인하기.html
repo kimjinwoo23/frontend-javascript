@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="UTF-8">
+<title>로그인</title>
+
+</head>
+<body>
+<h1>연산자를 통한 로그인하기</h1>
+<pre>
+    입력된 id가 member와 일치하고
+    입력된 비밀번호가 맞다면
+    alert("로그인성공")을 출력하고 
+    id 또는 비밀번호가 일치하지않으면 
+    alert("아이디 또는 비밀번호가 일치하지않습니다 ")출력 
+
+    <div>
+        ID: <input type="text" id = "inputId"> <br>
+        PW: <input type="password" id = "inputPw"> <br>
+
+        <button onclick="로그인버튼()">로그인</button>
+    </div>
+    <script>
+        const 아이디 = document.getElementById("inputId");
+        const 비밀번호= document.getElementById("inputPw");
+
+    function 로그인버튼(){
+        const 아이디1 = 아이디.value;
+        const 비밀번호1 = 비밀번호.value;
+        
+        if(아이디1 == 'member' && 비밀번호1 == 'kkii'){
+            alert("로그인성공");
+            
+        }else{
+            alert("로그인실패");
+        }
+
+    }
+
+    </script>
+
+
+</pre>
+
+
+
+</body>
+</html>

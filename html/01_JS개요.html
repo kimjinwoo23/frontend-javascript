@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>01_JS개요</title>
+    </head>
+
+<body>
+<h1>Script</h1>
+<pre>
+    기본 프로그램의 동작을 사용자ㅓ의 요구에맞게 수행하도록해주는
+    용도의 언어 
+    JAVA처럼 별도로 코드를 컴파일을 하지않고 
+    Interpreter (한줄씩 코드를 읽어서 해석하는 기능)를 이용해서
+    코드를 바로실행 
+    장점 : 컴파일에 소요되는 시간이 없음
+    단점 : 프로그램 실행시간이 자바보다 상대적으로 느림 
+    
+</pre>
+<h1>javascript 코드 작성방법</h1>
+<ol>
+    <li>브라우저 개발자 도구(f12) -> console에 직접 작성방법
+        <small>* 콘솔이란 웹 화면에서 보면서 코딩을 작성하는 공간</small>
+    </li>
+    <li>
+        HTML내부에 script 태그를 이용해서 작성 
+        <br>
+        <button onclick="알림창보이기()">내부에 script작성</button>
+        <script>
+            //javascript = js(줄임말)
+            /* script 태그 JS 코드를 작성할수있는 태그 */
+
+            /* 
+            java 에서 기능(메서드) 작성할 때 -> JS에서 작성할때
+            public void 동작이름(){ 
+            -> function 동작이름(){
+                보여줄 내용은 console.log나 alert을 사용함
+                console.log = 소비자에겐 보이지않지만 개발자에게는 보이는 출력문
+                alert = 소비자 눈에 보이는 출력문 
+
+            }
+            */
+
+            //function : 함수 기능 
+            function 알림창보이기(){
+                //alert 알림 /경고창 alert 보여주고자 하는 내용 " " 안에 작성
+                alert("버튼이 클릭되었습네다");
+            }
+        </script>
+    </li>
+</ol>   
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>

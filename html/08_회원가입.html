@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>회원가입</title>
+  </head>
+  <body>
+    <div>이름 : <input type="text" id="user_name" /></div>
+    <div >이메일 : <input type="email" id="user_email" /></div>
+    <div>
+      비밀번호 : <input type="password" id="user_pw" />
+    </div>
+    <div>
+      비밀번호 확인: <input type="password" id="user_pw_confirm" />
+    </div>
+    <button onclick="이름이메일존재확인()">이름이메일존재확인</button>
+    <button onclick="비밀번호일치여부()">비밀번호일치여부</button>
+
+    <button onclick="회원가입()">회원가입</button>
+    <script>
+      const 이름1 = document.getElementById("user_name");
+      const 이메일1 = document.getElementById("user_email");
+      const 비밀번호1 = document.getElementById("user_pw");
+      const 비밀번호확인1 = document.getElementById("user_pw_confirm");
+
+      function 이름이메일존재확인() {
+        const 이름 = 이름1.value;
+        const 이메일 = 이메일1.value;
+
+        if (이름 == "동그라미" && 이메일 == "one@kh.kh") {
+          alert("일치합니다");
+        } else {
+          alert("일치하지않습니다");
+        }
+      }
+      function 비밀번호일치여부() {
+        const pw = 비밀번호.value;
+        const user_pw_confirm = 비밀번호확인.value;
+
+        if (pw == user_pw_confirm) {
+          alert("일치합니다");
+        } else {
+          alert("일치하지않습니다");
+        }
+      }
+    </script>
+  </body>
+</html>

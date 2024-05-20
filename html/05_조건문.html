@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>조건문</title>
+    </head>
+    <body>
+        <h1>조건문</h1>
+        <pre>
+            프로그래밍 코드가 해석되는 순서를 제어하는 제어문의 한 종류로
+            작성된 조건식에 따라 수행되는 코드를 변경하는 구문
+        </pre>
+        <hr>
+
+        <h3>if(만약에) 문</h3>
+        <pre>
+            <code>
+                if(조건식){
+                    조건식이 true일 경우 실행할 코드;
+                }
+            </code>
+            * 조건식 : 결과가 true, false 인 식
+        </pre>
+        <input type="number" id="인풋1">
+        <button onclick="체크1()">양수인지 검사하기</button>
+        <script>
+            /* if 문을 사용해서 양수인지 검사하기 */
+            const 인풋1 = document.getElementById("인풋1");
+            function 체크1() {
+                const 양수확인값 =  인풋1.value;
+
+                // 만약에 input에서 입력받은 값이 0보다 커서 true가 되면 양수 !
+                if(양수확인값 > 0 ){
+                    alert("양수입니다.!!!!");
+                }
+
+                // 만약에 input에서 입력받은 값이 0보다 같거나 작으면 true 양수가아님 !
+                if(양수확인값 <= 0) {
+                    alert("양수가 아닙니다.!!!!");
+                }
+            }
+        </script>
+
+        <hr>
+        <h3> if - else 문</h3>
+        <pre>
+            <code>
+                if(조건식) {
+                    조건식이 true인 경우 수행할 코드;
+                } else {
+                    조건식이 false인 경우 수행할 코드;
+                }
+            </code>
+
+            *else는 조건식을 작성하는 () 없음
+        </pre>
+        <h5>0~100 사이에 랜덤 숫자를 발생시켜서 홀/짝 판별</h5>
+        <button onclick="체크2()">확인하기</button>
+        <script>
+            //랜덤한 숫자출력을 요구하는 경우에 Math.random()
+            //Math.floor(): 내림   주어진 정수와 같거나 작은 정수중에서 가장 큰 수 반환
+           // Math.cell() : 올림   주어진 정수와같거나 큰 정수 중에서 가장 작은수 반환
+           //Math.round() : 반올림 입력한 값을 정수와 가장 가까운 정수를 반환 
+
+            //random 으로 나온 실수를 정수로 반환하고 싶다면 위 세가지 중에서 넣고 싶은 값 괄호 () 안에 
+            //Math.random()을 넣어주면됨 
+            function 체크2(){
+
+            
+            const 랜덤 =  Math.floor(     Math.random() * 101  ) ; //0~101까지 랜덤추출 
+
+            if(랜덤 % 2 !=0){
+                alert("홀수입니다");
+            
+            }
+        }
+
+        </script>
+
+        <h5>어린이,청소년,성인 구분하기</h5>
+        <pre> 
+            나이를 입력받아 0~13: 어린이 
+            14~19세 : 청소년 20~ 120세 : 성인 
+
+        </pre>
+        나이: <input type="number" id="나이값">
+        <button onclick="체크4()">확인하기</button>
+
+        <script>
+            function 체크4(){
+            
+            const age = document.getElementById ("나이값");            
+            const 나이 = age.value;
+
+                let 메세지; 
+
+            //0이랑 같거나0보다 큰데 13보다 같거나 작을때 
+            if(나이 >=0 && 나이 <=13){
+               메세지 = "어린이";
+            }else if (나이 >=14 && 나이 <=19){
+              메세지 = "청소년";
+            }else{
+             메세지 = "성인";
+            }
+            console.log("값"+나이);
+                alert(메세지);
+        }
+        </script>
+
+
+    </body>
+
+</html>
