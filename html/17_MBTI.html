@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MBTI</title>
+    <meta charset="utf-8" />
+    <style>
+      .선택한옵션들 {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .선택한옵션 {
+        border: 2px solid black;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 0 10px;
+        padding: 10px 20px;
+      }
+      .선택한옵션:hover {
+        background-color: aquamarine;
+        color: cornflowerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>성격유형 테스트</h1>
+    <div class="문제">
+      <p>각 질문에 대해 솔직하게 답변하셈 ㅇㅇ</p>
+      <div id="문제1">
+        <p>1. 새로운 사람들과 만날때 당신은 어떻게 접근하나요</p>
+        <div class="선택한옵션들">
+          <div class="선택한옵션" onclick="옵션선택('E')">활발함</div>
+          <div class="선택한옵션" onclick="옵션선택('I')">관찰함</div>
+        </div>
+      </div>
+      <div id="문제2" style="display: none">
+        <p>2번.주어진일에대해 어떤 모습을하나요</p>
+        <div class="선택한옵션들">
+          <div class="선택한옵션" onclick="옵션선택('S')">
+            실제적이고 현실적이다
+          </div>
+          <div class="선택한옵션" onclick="옵션선택('N')">
+            감정적이고 친화적이다
+          </div>
+        </div>
+      </div>
+
+      <div id="문제3" style="display: none">
+        <p>3.변화에 대처할때 당신은 어떻게 행동하나요</p>
+        <div class="선택한옵션들">
+          <div class="선택한옵션" onclick="옵션선택('T')">
+            논리적이고 분석적이다
+          </div>
+          <div class="선택한옵션" onclick="옵션선택('F')">
+            창의적이고 비전을갖는다
+          </div>
+        </div>
+      </div>
+      <div id="문제4" style="display: none">
+        <p>4.계획을 세울때 당신은 주로 어떻게하나요</p>
+        <div class="선택한옵션들">
+          <div class="선택한옵션" onclick="옵션선택('J')">
+            계획을세우고 준비함
+          </div>
+          <div class="선택한옵션" onclick="옵션선택('P')">
+            융통성있게 대처한다
+          </div>
+        </div>
+      </div>
+
+      <div id="문제5" style="display: none">
+        <p>5. 스트레스 상황에서 어떤행동을 하나요</p>
+        <div class="선택한옵션들">
+          <div class="선택한옵션" onclick="옵션선택('E')">
+            사람들과 소통한다
+          </div>
+          <div class="선택한옵션" onclick="옵션선택('I')">
+            혼자서 시간을 보낸다
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="결과확인"></div>
+
+    <script>
+      let 결과 = {};
+
+      function 옵션선택(옵션) {
+        //각 질문의 대한 값을 저장
+        let 현재질문 = Object.keys(결과).length + 1;
+        결과["문제 + 현재질문 "] = 옵션;
+
+        //다음질문보여주기
+        let 다음질문 = 현재질문 + 1;
+
+        let 다음질문div = document.getElementById("문제" + 다음질문);
+        let 현재질문div = document.getElementById("문제" + 현재질문);
+
+        if (다음질문div) {
+          현재질문div.style.display = "none";
+          다음질문div.style.display = "block";
+        } else {
+          결과확인하기();
+        }
+
+        function 결과확인하기() {
+          let 결과확인 = "당신의 성격 유형은";
+          let MBTI갯수확인 = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+
+          //문제에대해 체크한답을 더해줄것
+
+          for (let 문제 in 정답) {
+            console.log("문제 :" + 문제);
+            console.log("결과 :" + 결과);
+            MBTI갯수확인[결과[문제]]++;
+            console.log(
+              "MBTI갯수확인 : " + [결과[문제]] + MBTI갯수확인[결과[문제]]
+            );
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

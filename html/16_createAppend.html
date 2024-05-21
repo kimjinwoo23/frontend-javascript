@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>태그(요소)추가하기</title>
+<meta charset="utf-8">
+
+</head>
+<body>
+
+<h1>appendChild 및 createElement 예제</h1>
+<div id="컨테이너">
+    <p>div안에 새로운 p태그 추가하기 </p>
+
+</div>
+
+<button onclick="태그추가"()>추가하기</button>
+
+<script>
+
+    function 태그추가(){
+
+//새로운 div 생성하기위해 변수설정 
+    const newdiv = document.createElement("div");
+    newdiv.textContent = "새로운 div";
+
+    //새로운 p생성 
+    const newp = document.createElement("p");
+    newp.textContent = "새로운 p";
+    
+    //새로운 div 안에 새로운 p 추가하기 
+    newdiv.appendChild(newp);
+
+    document.getElementById("컨테이너").appendChild(newdiv);
+    
+
+}
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
