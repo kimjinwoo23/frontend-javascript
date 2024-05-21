@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>점심메뉴고르기</title>
+  </head>
+  <body>
+    <h2>점심메뉴 고르기</h2>
+    <div id="menu">
+        <h3>메뉴리스트</h3>
+        <ul id="menu-list">
+        <li>피자</li>
+        <li>햄버거</li>
+        <li>간짜장</li>
+        <li>차돌짬뽕</li>
+        <li>마라탕</li>
+    </ul>
+    </div>
+    <button onclick="메뉴선택()">메뉴선택하기</button>
+    <button onclick="메뉴추가()">메뉴추가하기</button>
+    <script>
+        function 메뉴추가(){
+
+            const 메뉴리스트 = document.getElementById("menu-list");
+
+            const 신메뉴 =prompt("새로운 메뉴를 입력하세여");
+
+            if(신메뉴){//확인을 누르면 true
+                //li 태그추가하기 
+                const newitem = document.createElement("li");
+                newitem.textContent = 신메뉴;
+                메뉴리스트.appendChild(newitem);
+
+            }
+
+
+
+
+        }
+
+
+
+        function 메뉴선택(){
+            const 메뉴리스트 = document.getElementById("menu-list");
+
+            const 아이템들 = document.getElementsByTagName("li");
+            console.log("아이템들 : " + 아이템들);
+
+            const 랜덤숫자 = Math.floor(Math.random() * 아이템들.length);
+            console.log("랜덤" + 랜덤숫자);
+            const 아이템선택 = 아이템들[랜덤숫자];
+            alert("점심메뉴는 "+아이템선택.innerText);
+
+
+            /*
+            createElement :태그 생성하기 닫는태그 표시 안함
+            
+            appendChild : 눈에 보이게끔 부모태그에 새로만든 자식태그를 추가
+            
+
+            */
+
+
+
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+  </body>
+
+</html>
