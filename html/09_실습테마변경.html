@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+  </head>
+  <body>
+    <h1>테마변경</h1>
+    <button onclick="밝은모드()">밝은모드</button>
+    <button onclick="어두운모드()">어두운모드</button>
+    <button onclick="분홍모드()">분홍모드</button>
+    <button onclick="민트모드()">민트모드</button>
+
+    <script>
+        // 자료형 var let const 
+        const 바디 = document.querySelector("body");
+        
+        //모드 기능만들기 
+        //querySelector = 특정한 class나 id가없을 때 태그를 선택하는것
+        function 밝은모드(){
+            바디.style.color = "blue";
+            바디.style.backgroundColor = "white";
+        }
+        function 어두운모드(){
+            바디.style.color = "white";
+            바디.style.backgroundColor = "black";
+        }
+        function 분홍모드(){
+            바디.style.color = "lightpink";
+            바디.style.backgroundColor = "lightcoral";
+        }
+        function 민트모드(){
+            바디.style.color = "blue";
+            바디.style.backgroundColor = "aquamarine";
+        }
+
+
+
+    </script>
+
+
+
+  </body>
+
+
+
+</html>
