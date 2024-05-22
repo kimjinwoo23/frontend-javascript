@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>토글 toggle</title>
+<meta charset="utf-8">
+<style>
+    #토글박스{
+        width: 200px;
+        height: 200px;
+        background-color: antiquewhite;
+        border: 2px solid lightpink;
+        text-align: center;
+        line-height: 200px;
+    }
+    button{
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 10px;
+        background-color: aquamarine;
+    }
+    button:hover{
+        background-color: coral;
+
+
+    }
+    .hidden{
+        display: none;
+
+    }
+</style>
+</head>
+<body>
+    <h1>박스 보이고숨기기</h1>
+     <div id="토글박스">글자보이기</div>
+    <button onclick="보이고숨기기()">토글클릭하기</button>
+    <!--버튼을 사용하지않고 한번에끝낼때 사용-->
+
+    <script>
+        function 보이고숨기기(){
+            const 박스 = document.getElementById("토글박스");
+            if(박스.classList.contains("hidden")){
+                박스.classList.remove("hidden");
+            }else{
+                박스.classList.add("hidden");
+
+            }
+
+        }
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>

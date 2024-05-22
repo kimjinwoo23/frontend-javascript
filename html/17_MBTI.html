@@ -89,7 +89,7 @@
       function 옵션선택(옵션) {
         //각 질문의 대한 값을 저장
         let 현재질문 = Object.keys(결과).length + 1;
-        결과["문제 + 현재질문 "] = 옵션;
+        결과["문제" + 현재질문] = 옵션;
 
         //다음질문보여주기
         let 다음질문 = 현재질문 + 1;
@@ -103,22 +103,54 @@
         } else {
           결과확인하기();
         }
+      }
+      function 결과확인하기() {
+        let 결과확인 = "당신의 성격 유형은";
+        let MBTI갯수확인 = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
 
-        function 결과확인하기() {
-          let 결과확인 = "당신의 성격 유형은";
-          let MBTI갯수확인 = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+        //문제에대해 체크한답을 더해줄것
 
-          //문제에대해 체크한답을 더해줄것
-
-          for (let 문제 in 정답) {
-            console.log("문제 :" + 문제);
-            console.log("결과 :" + 결과);
-            MBTI갯수확인[결과[문제]]++;
-            console.log(
-              "MBTI갯수확인 : " + [결과[문제]] + MBTI갯수확인[결과[문제]]
-            );
-          }
+        for (let 문제 in 결과) {
+          //console.log("문제 :" + 문제);
+          //console.log("결과 :" + 결과);
+          MBTI갯수확인[결과[문제]]++;
+          console.log(
+            "MBTI갯수확인 : " + [결과[문제]] + MBTI갯수확인[결과[문제]]);
         }
+
+        //MBTI 결과 계산
+
+        //만약에 E와 I가 있는데 E가 I보다 많다면
+
+        if (MBTI갯수확인["E"] > MBTI갯수확인["I"]) {
+          결과확인 += "E";
+        } else {
+          결과확인 += "I";
+        }
+
+        //만약에 S와 N이 있는데 S가 N보다 많다면
+        if (MBTI갯수확인["S"] > MBTI갯수확인["N"]) {
+          결과확인 += "S";
+        } else {
+          결과확인 += "N";
+        }
+
+        //만약에 T와 F가 있는데 T가 F보다 많다면
+        if (MBTI갯수확인["T"] > MBTI갯수확인["F"]) {
+          결과확인 += "T";
+        } else {
+          결과확인 += "F";
+        }
+
+        //만약에 J와 P가 있는데 J가 P보다 많다면
+        if (MBTI갯수확인["J"] > MBTI갯수확인["P"]) {
+          결과확인 += "J";
+        } else {
+          결과확인 += "P";
+        }
+
+        document.getElementById("결과확인").innerText = 결과확인;
+        document.getElementById("결과확인").style.display = "block";
       }
     </script>
   </body>
